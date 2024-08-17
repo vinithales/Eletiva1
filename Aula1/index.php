@@ -7,6 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hoje é dia <?php  echo date("d/m/Y");   ?> </h1>
+    <h1>Hoje é dia <?php
+    
+    echo date("d/m/Y");   
+    
+    ?> 
+    </h1>
+    
+    <form action="Aula1/resposta.php" method="POST" class="form-label mt-5">
+        <input type="text" name="valor" class="form-label">
+        <button type="submit"  class="btn btn-dark">Enviar</button>
+    </form>
 </body>
 </html>
