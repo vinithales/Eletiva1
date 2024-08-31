@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="resposta1.php" method="POST">
+        <?php 
+            for($i = 1; $i <= 7; $i++)
+            {
+            ?>
+            <input type="number" name="valor <?= $i?>">
+            <?php
+
+                }
+            ?>
+        <button type="submit"> Enviar</button>
+    </form>
 </body>
 </html>
