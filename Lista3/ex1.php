@@ -7,17 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="resposta1.php" method="POST">
+    <form action="resposta1.php" method="POST" class="m-3">
         <?php 
             for($i = 1; $i <= 7; $i++)
             {
             ?>
-            <input type="number" name="valor <?= $i?>">
+            <input type="number" name="valor<?= $i?>" class="form-control mt-2">
             <?php
 
                 }
             ?>
-        <button type="submit"> Enviar</button>
+        <button type="submit" class="btn btn-success mt-2"> Enviar</button>
     </form>
 </body>
 </html>
