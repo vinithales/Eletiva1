@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1 class="ms-5 mt-5">Exercicio 2</h1>
-    <form action="resposta3.php" method="post" class="m-5">
+    <form action="resposta4.php" method="post" class="m-5">
         <div class="row">
             <div class="col">
               <label for="valor" class="form-label">Informe o valor do produto: </label>
