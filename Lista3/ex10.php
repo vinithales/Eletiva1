@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1 class="ms-5 mt-5">Exercicio 9</h1>
-    <form action="resposta9.php" method="post" class="m-5">
+    <h1 class="ms-5 mt-5">Exercicio 10</h1>
+    <form action="resposta10.php" method="post" class="m-5">
         <div class="row">
             <div class="col">
               <label for="valor" class="form-label">Informe um valor: </label>
