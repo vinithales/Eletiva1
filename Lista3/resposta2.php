@@ -16,7 +16,7 @@
                 $resultado = $valor1 + $valor2;
                 if($valor1 == $valor2){
                     $resultado = $resultado * 3;
-                    echo "<p>O resultado é de  $resultado e os dois valores são iguais </p>";
+                     return "<p>O resultado é de  $resultado e os dois valores são iguais </p>";
                 } else{
                     echo "<p>O resultado é de  $resultado </p>";
                 }
