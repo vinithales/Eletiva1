@@ -12,19 +12,20 @@
 </head>
 <body>
     <?php
+    function verificar(string $frase, string $palavra) : void{
+        if (strpos($frase, $palavra) !== false) {
+            echo "Palavra '{$palavra}' presente em '{$frase}'";
+        } else {
+            echo "A palavra '{$palavra}' não está presente em '{$frase}'";
+        }
+    }
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             try {
                 $palavra1 = (string) $_POST['palavra1'];
                 $palavra2 = (string) $_POST['palavra2'];
 
-
-                $palavra1 = str_split($palavra1);
-                $palavra2 = str_split($palavra2);
-
-                foreach($letra as $palavra2){
-                    if($letra)
-                }
                 
+                verificar($palavra1, $palavra2);
 
             } catch (\Throwable $th) {
                 echo "Error: " .$th->getMessage();
