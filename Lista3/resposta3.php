@@ -1,3 +1,6 @@
+<?php
+    declare(strict_types=1);
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +10,20 @@
 </head>
 <body>
     <?php
+    function verificar(string $frase, string $palavra) : void{
+        if (strpos($frase, $palavra) !== false) {
+            echo "A palavra '{$palavra}' está presente em '{$frase}'";
+        } else {
+            echo "A palavra '{$palavra}' não está contida em '{$frase}'";
+        }
+    }
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             
             try{
-                $valorA = (float) $_POST['valorA'];
-                $valorB = (float) $_POST['valorB'];
+                $fraseA = (string) $_POST['fraseA'];
+                $fraseB = (string) $_POST['fraseB'];
 
-                if ($valorA == $valorB) {
-                    echo "Os valores são iguais: $valorA";
-                } else {
-                    if ($valorA < $valorB) {
-                        echo "$valorA $valorB";
-                    } else {
-                        echo "$valorB $valorA";
-                    }
-                }
+                verificar($fraseA, $fraseB);
 
             } catch (Exception $e){
                 echo "Erro" .$e->getMessage();
