@@ -21,7 +21,7 @@
                         <input type="text" name="nomes[]" placeholder="Nome <?= $i ?>">
                     </div>
                     <div class="col">
-                        <input type="number" name="precos[]" placeholder="Preço <?= $i ?>" step="0.01">
+                        <input type="number" name="precos[]" placeholder="Preço <?= $i ?>">
                     </div>
                 </div>
             </div>
@@ -50,16 +50,14 @@
                     }
 
                
-                    foreach ($produtos as $codigo => &$produto) {
+                    foreach ($produtos as $codigo => $produto) {
                         if ($produto['preco'] > 100) {
                             $produto['preco'] -= 0.1 * $produto['preco'];
                         }
                     }
 
         
-                    uasort($produtos, function($a, $b) {
-                        return strcmp($a['nome'], $b['nome']);
-                    });
+    
 
      
             
