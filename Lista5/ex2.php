@@ -36,7 +36,23 @@
         <?php
             if($_SERVER['REQUEST_METHOD'] ==  "POST"){
                 try {
-                    
+                    $nomes = $_POST['nomes'];
+                    $notas1 = $_POST['nota1'];
+                    $notas2 = $_POST['nota2'];
+                    $notas3 = $_POST['nota3'];
+                    $nomesMedias = [];
+
+                    for($i = 0; $i < count($nomes); $i++){
+                        $media = ($notas1[$i] + $notas2[$i] + $notas3[$i]) / 3;
+                        $nomesMedias[$nomes[$i]] = $media;
+                    }
+
+                        arsort($nomesMedias);
+
+                    foreach ($nomesMedias as $nome => $media) {
+                        echo "<p>Nome: {$nome} Média: {$media}</p>";
+                    }
+
                 } catch (Exception $e) {
                     echo "Erro: " .$e->getMessage();
                 }
