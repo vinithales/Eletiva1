@@ -28,7 +28,7 @@
             </div>
         <?php endfor ?>
         <div class="container">
-            <button type="submit">
+            <button type="submit" class="btn">
                 Enviar
             </button>
         </div>
