@@ -56,10 +56,7 @@
                         }
                     }
 
-        
     
-
-     
             
                     foreach ($produtos as $codigo => $produto) {
                         echo "<p>Código: {$codigo}, Nome: {$produto['nome']}, Preço: R$ {$produto['preco']} . </p>";
