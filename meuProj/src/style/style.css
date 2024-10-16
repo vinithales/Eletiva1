@@ -1,0 +1,44 @@
+body{
+    background-color: #CFCAC1;
+}
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.central-box {
+    max-width: 900px; 
+    width: 100%;
+    background-image: url(/src/img/fundo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.illustration {
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); 
+    padding: 40px;
+    border-radius: 10px;
+    color: #F0EAD8;
+    text-align: center;
+}
+.form-section {
+    padding: 40px;
+}
+.illustration h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #F0EAD8;
+}
+.form-box {
+    max-width: 400px;
+    margin: 0 auto;
+}
+img {
+    width: 57%;
+    margin-left: 86px;
+}

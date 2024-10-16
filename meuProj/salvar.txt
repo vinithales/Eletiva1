@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com PHP e JS Assíncrono</title>
+</head>
+<body>
+
+    <h1>Exemplo de PHP com JavaScript Assíncrono</h1>
+
+    <!-- Formulário que enviará dados via JavaScript -->
+    <form id="meuForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Onde a resposta do PHP será exibida -->
+    <div id="resultado"></div>
+
+    <script>
+        // Capturando o evento de submissão do formulário
+        document.getElementById("meuForm").addEventListener("submit", async function(event) {
+            event.preventDefault(); // Prevenir o comportamento padrão do formulário
+
+            const nome = document.getElementById("nome").value; // Pegando o valor do campo 'nome'
+
+            try {
+                // Usando a Fetch API para fazer uma requisição assíncrona ao servidor PHP
+                const response = await fetch("processar.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: `nome=${encodeURIComponent(nome)}` // Enviar dados no formato URL-encoded
+                });
+
+                const data = await response.text(); // Receber a resposta como texto
+                document.getElementById("resultado").innerHTML = data; // Exibir a resposta na div
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+            }
+        });
+    </script>
+
+</body>
+</html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Pegando o dado enviado via POST
+    $nome = htmlspecialchars($_POST['nome']);
+
+    // Processando o dado (neste exemplo, apenas enviando de volta)
+    echo "Olá, " . $nome . "! Você enviou seu nome com sucesso.";
+} else {
+    echo "Nenhum dado enviado.";
+}
+?>
+
