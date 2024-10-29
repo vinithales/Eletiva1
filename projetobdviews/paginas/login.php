@@ -1,34 +1,33 @@
 <?php 
+
+    require_once('../funcoes/usuarios.php');
+
     session_start();
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        try {
+        try{
             $email = $_POST['email'] ?? "";
             $senha = $_POST['senha'] ?? "";
             if ($email != "" && $senha != ""){
-                if($email == "adm@adm.com" && $senha == '123'){
-                    $_SESSION['usuario'] = "Administrador";
+                $usuario = login($email, $senha);
+                if ($usuario){
+                    $_SESSION['usuario'] = $usuario['nome'];
+                    $_SESSION['nivel'] = $usuario['nivel'];
                     $_SESSION['acesso'] = true;
-
                     header("Location: dashboard.php");
-                     
-                }else{
-                    $erro = "Crendenciais Inválidas!";
+                } else {
+                    $erro = "Credenciais inválidas!";
                 }
             }
-
-
-        } catch (Exception $e) {
-            echo "Erro: " .$e->getMessage();
+        } catch(Exception $e){
+            echo "Erro: ".$e->getMessage();
         }
     }
-
-
     require_once 'cabecalho.php'; 
 ?>
 
 <div class="container mt-5">
     <h2>Login</h2>
-    <form method="post" action=" ">
+    <form method="post">
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" name="email" class="form-control" id="email" required>
